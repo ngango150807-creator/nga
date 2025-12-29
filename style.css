@@ -1,5 +1,11 @@
-* {
-    box-sizing: border-box;
+/* ===== BODY + CANVAS ===== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    overflow: hidden;
+    transition: background-color 1.5s ease;
+    background-color: #0f2a44; /* nền ban đầu */
 }
 
 #effect {
@@ -8,120 +14,68 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    pointer-events: none;  /* để click vẫn vào bì thư */
+    pointer-events: none;
     z-index: 1;
 }
 
-
-/* 🌨️ NỀN BAN ĐẦU (BÀI 1) */
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #0f2a44;
-    font-family: "Segoe UI", Tahoma, sans-serif;
-    overflow: hidden;
-    transition: background-color 1.5s ease;
-}
-
-/* ✉️ PHONG BÌ */
+/* ===== PHONG BÌ ===== */
 #envelope {
     position: absolute;
-    left: 50%;
     top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
-
-    width: 1300px;
-    height: 600px;
-
-    /* 💎 XANH TRONG SUỐT */
-    background: rgba(40, 106, 151, 0.35);
-
+    width: 640px;
+    height: 420px;
+    background: rgba(120,180,220,0.35);
     border-radius: 24px;
-
-    /* hiệu ứng kính */
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-
-    box-shadow:
-        0 30px 60px rgba(0,0,0,0.35),
-        inset 0 0 0 1px rgba(255,255,255,0.35);
-
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(255,255,255,0.35);
     z-index: 2;
 }
 
-
-/* 🔺 NẮP PHONG BÌ */
-/* 🔺 NẮP PHONG BÌ – TAM GIÁC CỤT */
 #envelope .flap {
     position: absolute;
     top: 0;
     left: 0;
-
     width: 100%;
     height: 55%;
-
-    background: #eadcc6;
-
-    /* 🔺 TAM GIÁC CỤT */
-    clip-path: polygon(
-        0% 0%,
-        100% 0%,
-        70% 100%,
-        30% 100%
-    );
-
+    background: rgba(100,160,210,0.45);
+    clip-path: polygon(0% 0%, 100% 0%, 70% 100%, 30% 100%);
     transform-origin: top center;
-    transform: rotateX(0deg);
     transition: transform 1s ease;
-
     z-index: 3;
 }
 
-/* ✨ MỞ NẮP */
-#envelope.open .flap {
-    transform: rotateX(-120deg);
-}
-
-
-#envelope.open::before {
-    transform: rotateX(-120deg);
-}
-
-/* 📄 LÁ THƯ */
+/* ===== LETTER ===== */
 #letter {
     position: absolute;
-    left: 60px;
-    top: 80px;
-
-    width: 1280px;
-    max-height: 550px;   /* ✅ đổi từ height */
-
-    padding: 30px;
-    background: #aac9ff;
-    border-radius: 18px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-
-    overflow-y: auto;
-
-    transform: translateY(160px);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #fffaf0;
     opacity: 0;
-    transition: transform 1.2s ease, opacity 1.2s ease;
+    transition: opacity 1s ease;
+    overflow: hidden;
 }
 
-
 #letter.show {
-    transform: translateY(0);
     opacity: 1;
 }
 
-/* ⌨️ CHỮ */
-#code {
-    font-size: 18px;
-    line-height: 1.9;
+#line {
+    margin-bottom: 12px;
 }
 
 .line {
-    display: block;
-    min-height: 1.9em;
+    font-size: 18px;
+    line-height: 2em;
 }
 
+/* ===== EFFECT PARTICLE ===== */
+.snow, .flower, .heart {}
+
+/* HEART, SNOW, FLOWER được render trong canvas nên không cần CSS thêm */
