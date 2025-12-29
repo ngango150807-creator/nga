@@ -57,7 +57,7 @@ function typeLines(container, speed = 300, delay = 500) {
                 lineIndex++;
                 setTimeout(typeLine, delay);
             }
-        }, speed);
+        }, 40);
     }
 
     typeLine();
@@ -155,3 +155,4 @@ function drawParticles() {
 /* gọi ban đầu: TUYẾT */
 createParticles("snow");
 drawParticles();
+
