@@ -4,10 +4,14 @@
 
 #effect {
     position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;  /* để click vẫn vào bì thư */
+    z-index: 1;
 }
+
 
 /* 🌨️ NỀN BAN ĐẦU (BÀI 1) */
 body {
@@ -120,3 +124,4 @@ body {
     display: block;
     min-height: 1.9em;
 }
+
