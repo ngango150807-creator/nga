@@ -1,5 +1,4 @@
 /* ================= AUDIO + MÀU NỀN + HIỆU ỨNG ================= */
-
 const playlist = [
     { src: "mp3/nhac1.mp3", bg: "#0f2a44", effect: "snow" },
     { src: "mp3/nhac2.mp3", bg: "#9999FF", effect: "mix" },
@@ -19,7 +18,7 @@ function playTrack(index) {
         createParticles("snow");
         setTimeout(() => createParticles("flower"), 1000);
     } else if (playlist[index].effect === "heart") {
-        createParticles("snow");       // snow vẫn rơi
+        createParticles("snow");
         setTimeout(() => createParticles("heart"), 500);
     }
 
@@ -32,8 +31,7 @@ audio.addEventListener("ended", () => {
     playTrack(currentTrack);
 });
 
-/* ================= TYPEWRITER THEO DÒNG ================= */
-
+/* ================= TYPEWRITER ================= */
 function typeLines(container, speed = 300, delay = 500) {
     const lines = container.querySelectorAll(".line");
     let lineIndex = 0;
@@ -59,14 +57,13 @@ function typeLines(container, speed = 300, delay = 500) {
                 lineIndex++;
                 setTimeout(typeLine, delay);
             }
-        }, 40);
+        }, speed);
     }
 
     typeLine();
 }
 
 /* ================= CLICK BẮT ĐẦU ================= */
-
 document.addEventListener("click", () => {
     const envelope = document.getElementById("envelope");
     const letter = document.getElementById("letter");
@@ -83,7 +80,6 @@ document.addEventListener("click", () => {
 }, { once: true });
 
 /* ================= TUYẾT + HOA ĐÀO + HEART ================= */
-
 const canvas = document.getElementById("effect");
 const ctx = canvas.getContext("2d");
 
@@ -157,8 +153,5 @@ function drawParticles() {
 }
 
 /* gọi ban đầu: TUYẾT */
-window.onload = () => {
-    createParticles("snow");  // gọi snow đầu tiên
-    drawParticles();           // chạy animation
-};
-
+createParticles("snow");
+drawParticles();
