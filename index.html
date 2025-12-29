@@ -2,22 +2,18 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Bức thư</title>
-
-    <link rel="stylesheet" href="asset/style.css">
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="asset/functions.js" defer></script>
-
+    <title>Thư gửi Hùng</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<canvas id="effect"></canvas>
-
 <body>
+    <!-- Canvas hiệu ứng -->
+    <canvas id="effect"></canvas>
 
-<!-- ✉️ PHONG BÌ -->
-<div id="envelope">
-    <div id="letter">
-        <div id="code">
+    <!-- Phong bì -->
+    <div id="envelope">
+        <div class="flap"></div>
+        <div id="letter">
+            <div id="code">
             <div class="line">Một bức thư - không nonchalant!!</div>
             <div class="line">Xin chào bạn Hùng!</div>
             <div class="line">Nga viết "mail tay" này để phản hồi bạn một cách thẳng thắn luôn nhé! </div>
@@ -65,11 +61,10 @@
         </div>
     </div>
 
-    <canvas id="canvas" width="1500" height="680"></canvas>
+    <!-- Audio -->
+    <audio id="music"></audio>
 
-</div>
-
-<audio id="music" preload="auto"></audio>
-
+    <!-- JS -->
+    <script src="functions.js"></script>
 </body>
 </html>
