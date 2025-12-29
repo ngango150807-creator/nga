@@ -1,8 +1,8 @@
 /* ================= AUDIO + MÀU NỀN + HIỆU ỨNG ================= */
 const playlist = [
-    { src: "mp3/nhac1.mp3", bg: "#0f2a44", effect: "snow" },
-    { src: "mp3/nhac2.mp3", bg: "#9999FF", effect: "mix" },
-    { src: "mp3/nhac3.mp3", bg: "#FF99FF", effect: "heart" }
+    { src: "nhac1.mp3", bg: "#0f2a44", effect: "snow" },
+    { src: "nhac2.mp3", bg: "#9999FF", effect: "mix" },
+    { src: "nhac3.mp3", bg: "#FF99FF", effect: "heart" }
 ];
 
 let currentTrack = 0;
@@ -155,4 +155,5 @@ function drawParticles() {
 /* gọi ban đầu: TUYẾT */
 createParticles("snow");
 drawParticles();
+
 
