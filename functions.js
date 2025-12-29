@@ -157,5 +157,8 @@ function drawParticles() {
 }
 
 /* gọi ban đầu: TUYẾT */
-createParticles("snow");
-drawParticles();
+window.onload = () => {
+    createParticles("snow");  // gọi snow đầu tiên
+    drawParticles();           // chạy animation
+};
+
